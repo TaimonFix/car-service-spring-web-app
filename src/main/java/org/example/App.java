@@ -1,6 +1,11 @@
 package org.example;
 
-import java.io.File;
+import org.example.entity.Car;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Hello world!
@@ -8,12 +13,23 @@ import java.io.File;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) throws Exception {
+        System.out.println("Hello World!");
 
-        File carModels = new File("org/example/carModels");
-        System.out.println(carModels.isFile());
+
+        File file = new File("src/main/java/org/example/carModels.txt");
+
+        Random r = new Random();
+
+        for (int i = 0; i < 1000; i++) {
+            Car car = new Car("", "", "", "");
+            car.setRandomVin();
+            car.setRandomNumber();
+            car.setRandomBrand(file);
+            car.setRandomReleaseDate();
+            System.out.println(car);
+        }
+
 
     }
 }
