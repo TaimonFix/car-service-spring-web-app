@@ -13,6 +13,8 @@ public class Car {
     private String carBrand;
     private String releaseDate;
 
+    Random r = new Random();
+
     public Car(String vin, String carNumber, String carBrand, String releaseDate) {
         this.vin = vin;
         this.carNumber = carNumber;
@@ -22,7 +24,7 @@ public class Car {
 
     public void setRandomVin() {
         String[] arr = new String[17];
-        Random r = new Random();
+
         for (int i = 0; i < arr.length; i++) {
             if ((i <= 2) || (i == 9)) {
                 arr[i] = String.valueOf((char)(r.nextInt(26) + 'A'));
@@ -43,7 +45,6 @@ public class Car {
 
     public void setRandomNumber() {
         String[] arr = new String[8];
-        Random r = new Random();
         for (int i = 0; i < arr.length; i++) {
             if ((i == 0) || (i == 4) || (i == 5)) {
                 arr[i] = String.valueOf((char)(r.nextInt(26) + 'A'));
@@ -63,7 +64,6 @@ public class Car {
     }
 
     public void setRandomBrand(File file) throws Exception {
-
         ArrayList<String> carModelsList = new ArrayList<>();
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -77,8 +77,6 @@ public class Car {
     }
 
     public void setRandomReleaseDate() {
-        Random r = new Random();
-
         String day = String.valueOf(1 + r.nextInt(30));
         String month = String.valueOf(1 + r.nextInt(12));
         String year = String.valueOf(2000 + r.nextInt(24));
@@ -90,9 +88,8 @@ public class Car {
         if (month.length() == 1) {
             month = "0" + month;
         }
-        String releaseDate = day + "." + month + "." + year;
 
-        this.releaseDate = releaseDate;
+        this.releaseDate = day + "." + month + "." + year;
     }
 
     public String getVin() {

@@ -1,23 +1,77 @@
 package org.example.entity;
 
-public class Client {
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Random;
 
-    private int clientID;
+public class Client {
     private String fullName;
     private String phone;
 
-    public Client(int clientID, String fullName, String phone) {
-        this.clientID = clientID;
+    Random r = new Random();
+    public Client(String fullName, String phone) {
         this.fullName = fullName;
         this.phone = phone;
     }
 
-    public int getClientID() {
-        return clientID;
+    private ArrayList<String> getList(File file) throws Exception {
+
+        ArrayList<String> list = new ArrayList<>();
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        while (bufferedReader.ready()) {
+            list.add(bufferedReader.readLine());
+        }
+        return list;
     }
 
-    public void setClientID(int clientID) {
-        this.clientID = clientID;
+    public void setRandomFullName(File surnameFile, File nameFile, File patronymicFile) throws Exception {
+
+        ArrayList<String> surnameList = getList(surnameFile);
+        ArrayList<String> nameList = getList(nameFile);
+        ArrayList<String> patronymicList = getList(patronymicFile);
+
+        this.fullName = surnameList.get(r.nextInt(surnameList.size())) +" "+
+                        nameList.get(r.nextInt(nameList.size())) +" "+
+                        patronymicList.get(r.nextInt(patronymicList.size()));
+        }
+
+    public void setRandomPhone() {
+
+        String str1 = String.valueOf(r.nextInt(100));
+        String str2 = String.valueOf(r.nextInt(1000));
+        String str3 = String.valueOf(r.nextInt(100));
+        String str4 = String.valueOf(r.nextInt(100));
+
+        if (str1.length() == 1) {
+            str1 = 0 + str1;
+        } else if (str1.isEmpty()) {
+            str1 = "00";
+        }
+
+        if (str2.length() == 1) {
+            str2 = "00" + str2;
+        } else if (str2.length() == 2) {
+            str2 = 0 + str2;
+        } else if (str2.isEmpty()) {
+            str2 = "000";
+        }
+
+        if (str3.length() == 1) {
+            str3 = 0 + str3;
+        } else if (str3.isEmpty()) {
+            str3 = "00";
+        }
+
+        if (str4.length() == 1) {
+            str4 = 0 + str4;
+        } else if (str4.isEmpty()) {
+            str4 = "00";
+        }
+        this.phone = "+7" +"(9"+ str1 +')' +'-'+ str2 +'-' + str3 + '-' + str4;
     }
 
     public String getFullName() {
@@ -39,8 +93,7 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "clientID=" + clientID +
-                ", fullName='" + fullName + '\'' +
+                "fullName='" + fullName + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
     }
