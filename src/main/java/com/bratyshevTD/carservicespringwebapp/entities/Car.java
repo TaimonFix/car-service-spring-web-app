@@ -1,4 +1,4 @@
-package org.example.entity;
+package com.bratyshevTD.carservicespringwebapp.entities;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -78,7 +78,7 @@ public class Car {
 
     public void setRandomReleaseDate() {
         String day = String.valueOf(1 + r.nextInt(30));
-        String month = String.valueOf(1 + r.nextInt(12));
+        String month    = String.valueOf(1 + r.nextInt(12));
         String year = String.valueOf(2000 + r.nextInt(24));
 
         if (day.length() == 1) {

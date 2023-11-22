@@ -1,10 +1,10 @@
-package org.example.entity;
+package com.bratyshevTD.carservicespringwebapp.entities;
 
 import java.math.BigInteger;
 
 public class CarOrder {
 
-    private BigInteger orderID;
+    private long orderID;
     private int clientID;
     private String vin;
     private String orderDate;
@@ -13,11 +13,22 @@ public class CarOrder {
     private int detailID;
     private int employeeID;
 
-    public BigInteger getOrderID() {
+    public CarOrder(long orderID, int clientID, String vin, String orderDate, String correctionDate, String reason, int detailID, int employeeID) {
+        this.orderID = orderID;
+        this.clientID = clientID;
+        this.vin = vin;
+        this.orderDate = orderDate;
+        this.correctionDate = correctionDate;
+        this.reason = reason;
+        this.detailID = detailID;
+        this.employeeID = employeeID;
+    }
+
+    public long getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(BigInteger orderID) {
+    public void setOrderID(long orderID) {
         this.orderID = orderID;
     }
 

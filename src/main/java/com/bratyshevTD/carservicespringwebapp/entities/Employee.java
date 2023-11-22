@@ -1,12 +1,15 @@
-package org.example.entity;
+package com.bratyshevTD.carservicespringwebapp.entities;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Employee {
+
+    private int employeeID;
     private String fullName;
     private String birthDate;
     private String address;
@@ -19,9 +22,10 @@ public class Employee {
 
     Random r =  new Random();
 
-    public Employee(String fullName, String birthDate, String address,
+    public Employee(int employeeID, String fullName, String birthDate, String address,
                     String phone, String post, String salary, String experience,
                     String bonusSalary, String operatingMode) {
+        this.employeeID = employeeID;
         this.fullName = fullName;
         this.birthDate = birthDate;
         this.address = address;
@@ -139,6 +143,14 @@ public class Employee {
     }
 
 
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -214,6 +226,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
+                "employeeID='" + employeeID + '\'' +
                 "fullName='" + fullName + '\'' +
                 ", birthDate='" + birthDate + '\'' +
                 ", address='" + address + '\'' +
