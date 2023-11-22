@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Car</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Список автомобилей</h1>
+<!--    <span th:text="${car.vin + ' ' + car.carNumber + ' ' + car.carBrand + ' ' + car.releaseDate}"></span>-->
+    <table class="table table-hover">
+           <thead class="thead-dark">
+           <tr>
+               <td>vin</td>
+               <td>car number</td>
+               <td>car brand</td>
+               <td>release date</td>
+           </tr>
+           </thead>
+
+           <tbody>
+           <tr th:each="car : ${cars}">
+             <td th:text="${car.vin}"></td>
+             <td th:text="${car.carNumber}"></td>
+             <td th:text="${c ar.carBrand}"></td>
+             <td th:text="${car.releaseDate}"></td>
+           </tr>
+           </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,17 +1,21 @@
-package org.example.entity;
+package com.bratyshevTD.carservicespringwebapp.entities;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Client {
+
+    private int clientID;
     private String fullName;
     private String phone;
 
     Random r = new Random();
-    public Client(String fullName, String phone) {
+    public Client(int clientID, String fullName, String phone) {
+        this.clientID = clientID;
         this.fullName = fullName;
         this.phone = phone;
     }
@@ -74,6 +78,14 @@ public class Client {
         this.phone = "+7" +"(9"+ str1 +')' +'-'+ str2 +'-' + str3 + '-' + str4;
     }
 
+    public int getClientID() {
+        return clientID;
+    }
+
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -93,6 +105,7 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
+                "clientID='" + clientID + '\'' +
                 "fullName='" + fullName + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Car-order</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Список заказов</h1>
+    <span th:text="${carOrder.orderID + ' ' + carOrder.clientID + ' ' + carOrder.vin + ' '
+     + ' ' + carOrder.orderDate + ' ' + carOrder.correctionDate + ' ' + carOrder.reason + ' ' + carOrder.detailID + ' ' + carOrder.employeeID}"></span>
+</div>
+
+</body>
+</html>
