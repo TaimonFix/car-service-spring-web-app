@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Random;
 
 @Entity
@@ -26,12 +26,12 @@ public class Car {
     private String carBrand;
 
     @Column(name = "release_date")
-    private Date releaseDate;
+    private LocalDate releaseDate;
 
     public Car() {
     }
 
-    public Car(String vin, String carNumber, String carBrand, Date releaseDate) {
+    public Car(String vin, String carNumber, String carBrand, LocalDate releaseDate) {
         this.vin = vin;
         this.carNumber = carNumber;
         this.carBrand = carBrand;
@@ -95,22 +95,14 @@ public class Car {
         this.carBrand = carModelsList.get(r.nextInt(carModelsList.size()));
     }
 
-//    public void setRandomReleaseDate() {
-//Random r = new Random();
-//        String day = String.valueOf(1 + r.nextInt(30));
-//        String month    = String.valueOf(1 + r.nextInt(12));
-//        String year = String.valueOf(2000 + r.nextInt(24));
-//
-//        if (day.length() == 1) {
-//            day = "0" + day;
-//        }
-//
-//        if (month.length() == 1) {
-//            month = "0" + month;
-//        }
-//
-//        this.releaseDate = day + "." + month + "." + year;
-//    }
+    public void setRandomReleaseDate() {
+        Random r = new Random();
+        int day = 1 + r.nextInt(30);
+        int month = 1 + r.nextInt(12);
+        int year = 2000 + r.nextInt(24);
+
+        this.releaseDate = LocalDate.of(year, month, day);
+    }
 
     public String getVin() {
         return vin;
@@ -136,11 +128,11 @@ public class Car {
         this.carBrand = carBrand;
     }
 
-    public Date getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 

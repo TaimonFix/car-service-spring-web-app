@@ -5,9 +5,10 @@ import com.bratyshevTD.carservicespringwebapp.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -31,6 +32,33 @@ public class MainController {
         List<Car> allCars = carService.getAllCars();
         model.addAttribute("cars", allCars);
         return "car";
+    }
+
+    @PostMapping("/car/add")
+    public String addCar(@RequestParam String vin, @RequestParam String carNumber, @RequestParam String carBrand, @RequestParam LocalDate releaseDate) {
+        Car car = new Car(vin, carNumber, carBrand, releaseDate);
+        carService.addCar(car);
+        return "redirect:/car";
+    }
+
+//    @GetMapping("/car/adds")
+//    public void addCars() throws Exception {
+//        for (int i = 0; i < 1000; i++) {
+//            Car car = new Car();
+//            car.setRandomVin();
+//            car.setRandomNumber();
+//            car.setRandomBrand(new File("testData/car/carModels.txt"));
+//            car.setRandomReleaseDate();
+//            carService.addRandomCars(car);
+//        }
+//    }
+
+
+
+    @GetMapping("/car/delete/{vin}")
+    public String removeCarByVin(@PathVariable("vin") String vin) {
+        carService.removeCarById(vin);
+        return "redirect:/car";
     }
 //    @GetMapping("/car/{id}")
 //    public String carPage(Model model, @PathVariable("id") int id) {

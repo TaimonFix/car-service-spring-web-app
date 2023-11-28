@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="Подключение БД к проекту&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html">
+    <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/TestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
-        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -34,9 +39,6 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -46,19 +48,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/braty/IdeaProjects/car-service-spring-web-app",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/braty/IdeaProjects/car-service-spring-web-app&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\braty\OneDrive\Рабочий стол\car-service-spring-web-app\src\main\resources\templates" />
@@ -159,15 +160,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700645029672</updated>
     </task>
-    <task id="LOCAL-00006" summary="Подключение БД к проекту&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html">
-      <option name="closed" value="true" />
-      <created>1701180557397</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1701180557397</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,17 +178,6 @@
     <MESSAGE value="Добавлен spring boot, созданы .html сущностей" />
     <MESSAGE value="Добавлены service, repository для сущности &quot;Car&quot;" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
-    <MESSAGE value="Подключение БД к проекту&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подключение БД к проекту&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.postgresql.util.PSQLException" package="org.postgresql.util" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
   </component>
 </project>

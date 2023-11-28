@@ -21,11 +21,15 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public Car getCarById(String id) {
-        return carRepository.getOne(id);
+    public Car getCarByVin(String vin) {
+        return carRepository.getReferenceById(vin);
     }
 
-    public void removeCarById(String id) {
-        carRepository.deleteById(id);
+    public void addCar(Car car) {
+        carRepository.save(car);
+    }
+
+    public void removeCarById(String vin) {
+        carRepository.deleteById(vin);
     }
 }
