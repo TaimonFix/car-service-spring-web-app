@@ -1,21 +1,37 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
+import jakarta.persistence.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
+@Entity
+@Table(name = "car")
+
 public class Car {
+    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    @Column(name = "vin")
     private String vin;
+
+    @Column(name = "car_number")
     private String carNumber;
+
+    @Column(name = "car_brand")
     private String carBrand;
-    private String releaseDate;
 
-    Random r = new Random();
+    @Column(name = "release_date")
+    private Date releaseDate;
 
-    public Car(String vin, String carNumber, String carBrand, String releaseDate) {
+    public Car() {
+    }
+
+    public Car(String vin, String carNumber, String carBrand, Date releaseDate) {
         this.vin = vin;
         this.carNumber = carNumber;
         this.carBrand = carBrand;
@@ -23,6 +39,7 @@ public class Car {
     }
 
     public void setRandomVin() {
+        Random r = new Random();
         String[] arr = new String[17];
 
         for (int i = 0; i < arr.length; i++) {
@@ -44,7 +61,9 @@ public class Car {
     }
 
     public void setRandomNumber() {
+        Random r = new Random();
         String[] arr = new String[8];
+
         for (int i = 0; i < arr.length; i++) {
             if ((i == 0) || (i == 4) || (i == 5)) {
                 arr[i] = String.valueOf((char)(r.nextInt(26) + 'A'));
@@ -76,21 +95,22 @@ public class Car {
         this.carBrand = carModelsList.get(r.nextInt(carModelsList.size()));
     }
 
-    public void setRandomReleaseDate() {
-        String day = String.valueOf(1 + r.nextInt(30));
-        String month    = String.valueOf(1 + r.nextInt(12));
-        String year = String.valueOf(2000 + r.nextInt(24));
-
-        if (day.length() == 1) {
-            day = "0" + day;
-        }
-
-        if (month.length() == 1) {
-            month = "0" + month;
-        }
-
-        this.releaseDate = day + "." + month + "." + year;
-    }
+//    public void setRandomReleaseDate() {
+//Random r = new Random();
+//        String day = String.valueOf(1 + r.nextInt(30));
+//        String month    = String.valueOf(1 + r.nextInt(12));
+//        String year = String.valueOf(2000 + r.nextInt(24));
+//
+//        if (day.length() == 1) {
+//            day = "0" + day;
+//        }
+//
+//        if (month.length() == 1) {
+//            month = "0" + month;
+//        }
+//
+//        this.releaseDate = day + "." + month + "." + year;
+//    }
 
     public String getVin() {
         return vin;
@@ -116,11 +136,11 @@ public class Car {
         this.carBrand = carBrand;
     }
 
-    public String getReleaseDate() {
+    public Date getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(String releaseDate) {
+    public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
     }
 
