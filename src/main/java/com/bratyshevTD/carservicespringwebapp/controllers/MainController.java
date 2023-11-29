@@ -52,12 +52,7 @@ public class MainController {
         return "car-order";
     }
 
-//    @GetMapping("/client")
-//    public String clientPage(Model model) {
-//        Client client = new Client(100L, "Иванов Иван Иванович", "88005553535");
-//        model.addAttribute("client", client);
-//        return "client";
-//    }
+//
 //
 //    @GetMapping("/employee")
 //    public String employeePage(Model model) {

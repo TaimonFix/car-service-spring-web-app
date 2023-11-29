@@ -1,5 +1,7 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
+import jakarta.persistence.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,14 +9,26 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Random;
 
+@Entity
+@Table(name="client")
 public class Client {
 
-    private int clientID;
+    @Id
+    @Column(name="client_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long clientID;
+
+
+    @Column(name="full_name")
     private String fullName;
+
+    @Column(name="phone")
     private String phone;
 
-    Random r = new Random();
-    public Client(int clientID, String fullName, String phone) {
+    public Client() {
+    }
+
+    public Client(Long clientID, String fullName, String phone) {
         this.clientID = clientID;
         this.fullName = fullName;
         this.phone = phone;
@@ -33,7 +47,7 @@ public class Client {
     }
 
     public void setRandomFullName(File surnameFile, File nameFile, File patronymicFile) throws Exception {
-
+        Random r = new Random();
         ArrayList<String> surnameList = getList(surnameFile);
         ArrayList<String> nameList = getList(nameFile);
         ArrayList<String> patronymicList = getList(patronymicFile);
@@ -44,7 +58,7 @@ public class Client {
         }
 
     public void setRandomPhone() {
-
+        Random r = new Random();
         String str1 = String.valueOf(r.nextInt(100));
         String str2 = String.valueOf(r.nextInt(1000));
         String str3 = String.valueOf(r.nextInt(100));
@@ -78,11 +92,11 @@ public class Client {
         this.phone = "+7" +"(9"+ str1 +')' +'-'+ str2 +'-' + str3 + '-' + str4;
     }
 
-    public int getClientID() {
+    public Long getClientID() {
         return clientID;
     }
 
-    public void setClientID(int clientID) {
+    public void setClientID(Long clientID) {
         this.clientID = clientID;
     }
 

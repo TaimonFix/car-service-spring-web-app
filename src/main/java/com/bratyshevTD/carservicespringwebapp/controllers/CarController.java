@@ -28,7 +28,7 @@ public class CarController {
     }
 
     @PostMapping("/car/add")
-    public String addCar(@RequestParam String vin, @RequestParam String carNumber, @RequestParam String carBrand, @RequestParam LocalDate releaseDate) {
+    public String addCar(@RequestParam String vin, @RequestParam String carNumber, @RequestParam String carBrand, @RequestParam(required = false) LocalDate releaseDate) {
         Car car = new Car(vin, carNumber, carBrand, releaseDate);
         carService.addCar(car);
         return "redirect:/car";

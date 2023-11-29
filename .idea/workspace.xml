@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="-Добавлены данные, страница, основные функции для car_detail&#10;-Добавлена навигация по страницам" />
+    <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/ClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/client.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -153,15 +164,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700645029672</updated>
     </task>
-    <task id="LOCAL-00006" summary="-Добавлены данные, страница, основные функции для car_detail&#10;-Добавлена навигация по страницам">
-      <option name="closed" value="true" />
-      <created>1701292225861</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1701292225861</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,7 +182,6 @@
     <MESSAGE value="Добавлен spring boot, созданы .html сущностей" />
     <MESSAGE value="Добавлены service, repository для сущности &quot;Car&quot;" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
-    <MESSAGE value="-Добавлены данные, страница, основные функции для car_detail&#10;-Добавлена навигация по страницам" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Добавлены данные, страница, основные функции для car_detail&#10;-Добавлена навигация по страницам" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
   </component>
 </project>

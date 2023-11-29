@@ -16,7 +16,38 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Client)}"> </div>
     <h1>Список клиентов</h1>
-    <span th:text="${client.clientID + ' ' + client.fullName + ' ' + client.phone}"></span>
+<!--    <span th:text="${client.clientID + ' ' + client.fullName + ' ' + client.phone}"></span>-->
+    <span th:if="${clients.size == 0}">Список клиентов пуст</span>
+    <table th:if="${clients.size > 0}" class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>Номер клиента</td>
+            <td>ФИО</td>
+            <td>Номер телефона</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <form th:action="@{'/client/add'}" method="post">
+                <td> <input type="text" th:name="clientID" class="form-control"></td>
+                <td> <input type="text" th:name="fullName" class="form-control"></td>
+                <td> <input type="text" th:name="phone" class="form-control"></td>
+                <td><button type="submit" class="btn btn-primary">Добавить</button> </td>
+            </form>
+        </tr>
+        <tr th:each="client : ${clients}">
+            <td th:text="${client.clientID}"></td>
+            <td th:text="${client.fullName}"></td>
+            <td th:text="${client.phone}"></td>
+            <td> <a class="btn btn-danger" th:href="@{'/client/delete/' + ${client.clientID}}">Удалить</a></td>
+        </tr>
+
+        </tbody>
+
+
+
+    </table>
 </div>
 
 </body>
