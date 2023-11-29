@@ -14,8 +14,33 @@
 <body>
 
 <div class="container">
+    <div th:replace="~{navigation :: navigation(Car-detail)}"> </div>
     <h1>Список деталей для автомобилей</h1>
-    <span th:text="${carDetail.detailID + ' ' + carDetail.title}"></span>
+<!--    <span th:text="${carDetail.detailID + ' ' + carDetail.title}"></span>-->
+    <span th:if="${carDetails.size == 0}">Список деталей для автомобилей пуст</span>
+    <table th:if="${carDetails.size > 0}" class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <td>Номер детали</td>
+            <td>Название</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <form th:action="@{'/car-detail/add'}" method="post">
+                <td> <input type="text" th:name="detailID" class="form-control"></td>
+                <td> <input type="text" th:name="title" class="form-control"></td>
+                <td> <button type="submit" class="btn btn-primary">Добавить</button></td>
+            </form>
+        </tr>
+        <tr th:each="carDetail : ${carDetails}">
+            <td th:text="${carDetail.detailID}"></td>
+            <td th:text="${carDetail.title}"></td>
+            <td> <a class="btn btn-danger" th:href="@{'/car-detail/delete/' + ${carDetail.detailID}}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title style="background-color:#1c87c9; color:#fff;">Car</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<div th:fragment="navigation(activeTab)">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item" th:classappend="${activeTab == 'Home' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{'/index'}">Home</a>
+                </li>
+                <li class="nav-item" th:classappend="${activeTab == 'Car' ? 'active' : ''}">
+                    <a class="nav-link"  th:href="@{'/car'}">Car</a>
+                </li>
+                <li class="nav-item" th:classappend="${activeTab == 'Car-detail' ? 'active' : ''}">
+                    <a class="nav-link"  th:href="@{'/car-detail'}">Car-detail</a>
+                </li>
+                <li class="nav-item" th:classappend="${activeTab == 'Car-Order' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{'/car-order'}">Car-Order</a>
+                </li>
+                <li class="nav-item" th:classappend="${activeTab == 'Client' ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{'/client'}">Client</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activeTab == 'Employee' ? 'active' : ''}"th:href="@{'/employee'}">Employee</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<body>
+
+</body>
+</html>

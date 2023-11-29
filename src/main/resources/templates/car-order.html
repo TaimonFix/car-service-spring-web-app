@@ -14,6 +14,7 @@
 <body>
 
 <div class="container">
+    <div th:replace="~{navigation :: navigation(Car-Order)}"> </div>
     <h1>Список заказов</h1>
     <span th:text="${carOrder.orderID + ' ' + carOrder.clientID + ' ' + carOrder.vin + ' '
      + ' ' + carOrder.orderDate + ' ' + carOrder.correctionDate + ' ' + carOrder.reason + ' ' + carOrder.detailID + ' ' + carOrder.employeeID}"></span>
