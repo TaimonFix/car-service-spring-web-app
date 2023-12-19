@@ -1,28 +1,55 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
+import jakarta.persistence.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
+@Entity
+@Table(name = "employee")
 public class Employee {
 
-    private int employeeID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "employee_id")
+    private Long employeeID;
+
+    @Column(name = "full_name")
     private String fullName;
-    private String birthDate;
+
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
+
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "post")
     private String post;
+
+    @Column(name = "salary")
     private String salary;
+
+    @Column(name = "experience")
     private String experience;
+
+    @Column(name = "bonus_salary")
     private String bonusSalary;
+
+    @Column(name = "operating_mode")
     private String operatingMode;
 
-    Random r =  new Random();
+    public Employee() {
+    }
 
-    public Employee(int employeeID, String fullName, String birthDate, String address,
+    public Employee(Long employeeID, String fullName, LocalDate birthDate, String address,
                     String phone, String post, String salary, String experience,
                     String bonusSalary, String operatingMode) {
         this.employeeID = employeeID;
@@ -52,6 +79,7 @@ public class Employee {
         ArrayList<String> surnameList = getList(surnameFile);
         ArrayList<String> nameList = getList(nameFile);
         ArrayList<String> patronymicList = getList(patronymicFile);
+        Random r =  new Random();
 
         this.fullName = surnameList.get(r.nextInt(surnameList.size())) +" "+
                 nameList.get(r.nextInt(nameList.size())) +" "+
@@ -59,24 +87,22 @@ public class Employee {
     }
 
     public void setRandomBirthDate() {
-        String day = String.valueOf(1 + r.nextInt(30));
-        String month = String.valueOf(1 + r.nextInt(12));
-        String year = String.valueOf(1950 + r.nextInt(44));
+        Random r =  new Random();
+        int day = 1 + r.nextInt(30);
+        int month = 1 + r.nextInt(12);
+        int year = 1950 + r.nextInt(44);
 
-        if (day.length() == 1) {
-            day = "0" + day;
+        if (month == 2 && day > 28) {
+            day-=1;
         }
 
-        if (month.length() == 1) {
-            month = "0" + month;
-        }
-
-        this.birthDate = day + "." + month + "." + year;
+        this.birthDate = LocalDate.of(year, month, day);
     }
 
     public void setRandomAddress(File cityFile, File streetFile) throws Exception{
         ArrayList<String> cityList = getList(cityFile);
         ArrayList<String> streetList = getList(streetFile);
+        Random r =  new Random();
 
         String city = cityList.get(r.nextInt(cityList.size()));
         String street = streetList.get(r.nextInt(streetList.size()));
@@ -86,6 +112,7 @@ public class Employee {
     }
 
     public void setRandomPhone() {
+        Random r =  new Random();
         String str1 = String.valueOf(r.nextInt(100));
         String str2 = String.valueOf(r.nextInt(1000));
         String str3 = String.valueOf(r.nextInt(100));
@@ -121,33 +148,38 @@ public class Employee {
 
     public void setRandomPost(File postFile) throws Exception {
         ArrayList<String> postList = getList(postFile);
+        Random r =  new Random();
          this.post = postList.get(r.nextInt(postList.size()));
     }
 
     public void setRandomSalary() {
+        Random r =  new Random();
         this.salary = String.valueOf(20000 + r.nextInt(120000));
     }
 
     public void setRandomExperience() {
-         this.experience = String.valueOf(r.nextInt(15));
+        Random r =  new Random();
+        this.experience = String.valueOf(r.nextInt(15));
     }
 
     public void setRandomBonusSalary() {
-         this.bonusSalary = String.valueOf(1000 * Integer.parseInt(this.experience));
+        Random r =  new Random();
+        this.bonusSalary = String.valueOf(1000 * Integer.parseInt(this.experience));
     }
 
     public void setRandomOperatingMode() {
+        Random r =  new Random();
         String operatingMode = "Стандартный, Сокращённый, Гибкий, Сменный, Неполный рабочий день, по графику";
         String[] operatingModeArr = operatingMode.split(", ");
         this.operatingMode = operatingModeArr[r.nextInt(operatingModeArr.length)];
     }
 
 
-    public int getEmployeeID() {
+    public Long getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(int employeeID) {
+    public void setEmployeeID(Long employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -159,11 +191,11 @@ public class Employee {
         this.fullName = fullName;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

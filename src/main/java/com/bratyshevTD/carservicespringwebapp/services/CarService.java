@@ -25,9 +25,7 @@ public class CarService {
         return carRepository.getReferenceById(vin);
     }
 
-    public void addCar(Car car) {
-        carRepository.save(car);
-    }
+    public void addCar(Car car) { carRepository.save(car); }
 
     public void removeCarById(String vin) {
         carRepository.deleteById(vin);

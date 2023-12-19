@@ -51,13 +51,4 @@ public class MainController {
         model.addAttribute("carOrder", carOrder);
         return "car-order";
     }
-
-//
-//
-//    @GetMapping("/employee")
-//    public String employeePage(Model model) {
-//        Employee employee = new Employee(1L, "", "", "", "", "", "", "", "", "");
-//        model.addAttribute("employee", employee);
-//        return "employee";
-//    }
 }

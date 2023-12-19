@@ -16,9 +16,65 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Employee)}"> </div>
     <h1>Список работников</h1>
-    <span th:text="${employee.employeeID + ' ' + employee.fullName + ' ' + employee.birthDate
-    + ' ' + employee.address + ' ' + employee.phone + ' ' + employee.post + ' ' + employee.salary
-    + ' ' + employee.experience + ' ' + employee.bonusSalary +  ' ' + employee.operatingMode}"></span>
+<!--    <span th:text="${employee.employeeID + ' ' + employee.fullName + ' ' + employee.birthDate-->
+<!--    + ' ' + employee.address + ' ' + employee.phone + ' ' + employee.post + ' ' + employee.salary-->
+<!--    + ' ' + employee.experience + ' ' + employee.bonusSalary +  ' ' + employee.operatingMode}"></span>-->
+    <h1>Список клиентов</h1>
+
+    <span th:if="${employees.size == 0}">Список работников пуст</span>
+    <table th:if="${employees.size > 0}" class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>Номер работника</td>
+            <td>ФИО</td>
+            <td>Дата рождения</td>
+            <td>Адрес</td>
+            <td>Телефон</td>
+            <td>Должность</td>
+            <td>Оклад</td>
+            <td>Стаж</td>
+            <td>Надбавка за оклад</td>
+            <td>Режим работы</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <form th:action="@{'/employee/add'}" method="post">
+                <td> <input type="text" th:name="employeeID" class="form-control"></td>
+                <td> <input type="text" th:name="fullName" class="form-control"></td>
+                <td> <input type="date" th:name="birthDate" class="form-control"></td>
+                <td> <input type="text" th:name="address" class="form-control"></td>
+                <td> <input type="text" th:name="phone" class="form-control"></td>
+                <td> <input type="text" th:name="post" class="form-control"></td>
+                <td> <input type="text" th:name="salary" class="form-control"></td>
+                <td> <input type="text" th:name="experience" class="form-control"></td>
+                <td> <input type="text" th:name="bonusSalary" class="form-control"></td>
+                <td> <input type="text" th:name="operatingMode" class="form-control"></td>
+
+                <td><button type="submit" class="btn btn-primary">Добавить</button> </td>
+            </form>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.employeeID}"></td>
+            <td th:text="${employee.fullName}"></td>
+            <td th:text="${employee.birthDate}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.phone}"></td>
+            <td th:text="${employee.post}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.experience}"></td>
+            <td th:text="${employee.bonusSalary}"></td>
+            <td th:text="${employee.operatingMode}"></td>
+
+            <td> <a class="btn btn-danger" th:href="@{'/employee/delete/' + ${employee.employeeID}}">Удалить</a></td>
+        </tr>
+
+        </tbody>
+
+
+
+    </table>
 </div>
 
 </body>
