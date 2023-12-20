@@ -41,24 +41,20 @@ public class CarController {
         return "redirect:/car";
     }
 
-    @GetMapping("/car/findByCarNumber")
-    public String filterAllByCarNumber(@RequestParam("carNumber") String carNumber, Model model) {
-        List<Car> findCars = carService.filterAllByCarNumber(carNumber);
-        model.addAttribute("cars", findCars);
-        return "find/findCar";
-    }
+    @GetMapping("/car/filter")
+    public String filterByCarNumberAndCarBrandAndReleaseDate(@RequestParam(name="carNumber", required=false) String carNumber,
+                                                           @RequestParam(name="carBrand", required=false) String carBrand,
+                                                           @RequestParam(name="releaseDate", required=false) LocalDate releaseDate,
+                                                           Model model) {
 
-    @GetMapping("/car/findByCarBrand")
-    public String filterAllByCarBrand(@RequestParam("carBrand") String carBrand, Model model) {
-        List<Car> findCars = carService.filterAllByCarBrand(carBrand);
-        model.addAttribute("cars", findCars);
-        return "find/findCar";
-    }
-
-    @GetMapping("/car/findByReleaseDate")
-    public String filterAllByReleaseDate(@RequestParam("releaseDate") LocalDate releaseDate, Model model) {
-        List<Car> findCars = carService.filterAllByReleaseDate(releaseDate);
-        model.addAttribute("cars", findCars);
+        if (carNumber==null && carBrand==null && releaseDate==null) {
+            return "redirect:/car";
+        }
+        model.addAttribute("carNumber", carNumber);
+        model.addAttribute("carBrand", carBrand);
+        model.addAttribute("releaseDate", releaseDate);
+        List<Car> filterCars = carService.filterAllByCarNumberAndCarBrandAndReleaseDate(carNumber, carBrand, releaseDate);
+        model.addAttribute("cars", filterCars);
         return "find/findCar";
     }
 

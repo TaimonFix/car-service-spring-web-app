@@ -14,7 +14,10 @@
 
 <div class="container">
     <div th:replace="~{navigation :: navigation(Car)}"> </div>
-    <h1>Список автомобилей</h1>
+    <h1>Список автомобилей по фильтру:</h1>
+    <span th:if="${carNumber!=null}">Номер автомобиля=<span th:text="${carNumber}"></span> <br></span>
+    <span th:if="${carBrand!=null}">Марка автомобиля=<span th:text="${carBrand}"></span> <br></span>
+    <span th:if="${releaseDate!=null}">Дата выпуска=<span th:text="${releaseDate}"></span> <br></span>
     Количество автомобилей: <span th:text="${cars.size}"></span>
     <br>
 

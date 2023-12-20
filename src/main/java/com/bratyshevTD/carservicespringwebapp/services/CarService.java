@@ -26,6 +26,10 @@ public class CarService {
     public List<Car> filterAllByCarBrand(String carBrand) {return  carRepository.findAllByCarBrand(carBrand); }
     public List<Car> filterAllByReleaseDate(LocalDate releaseDate) {return  carRepository.findAllByReleaseDate(releaseDate); }
 
+    public List<Car> filterAllByCarNumberAndCarBrandAndReleaseDate(String carNumber, String carBrand, LocalDate releaseDate) {
+        return carRepository.findAllByCarNumberAndCarBrandAndReleaseDate(carNumber, carBrand, releaseDate);
+    }
+
     public List<Car> getAllCars() { return carRepository.findAll(); }
 
     public Car getCarByVin(String vin) {
