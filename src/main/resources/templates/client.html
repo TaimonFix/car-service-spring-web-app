@@ -16,7 +16,8 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Client)}"> </div>
     <h1>Список клиентов</h1>
-<!--    <span th:text="${client.clientID + ' ' + client.fullName + ' ' + client.phone}"></span>-->
+    Количество клиентов: <span th:text="${clients.size}"></span>
+    <br>
     <span th:if="${clients.size == 0}">Список клиентов пуст</span>
     <table th:if="${clients.size > 0}" class="table table-hover">
         <thead class="bg-light">

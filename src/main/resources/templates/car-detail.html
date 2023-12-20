@@ -16,7 +16,8 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Car-detail)}"> </div>
     <h1>Список деталей для автомобилей</h1>
-<!--    <span th:text="${carDetail.detailID + ' ' + carDetail.title}"></span>-->
+    Количество деталей для автомобилей: <span th:text="${carDetails.size}"></span>
+    <br>
     <span th:if="${carDetails.size == 0}">Список деталей для автомобилей пуст</span>
     <table th:if="${carDetails.size > 0}" class="table table-hover">
         <thead class="bg-light">

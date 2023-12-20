@@ -23,6 +23,7 @@ public class CarController {
     @GetMapping("/car")
     public String carsPage(Model model) {
         List<Car> allCars = carService.getAllCars();
+        int size = allCars.size();
         model.addAttribute("cars", allCars);
         return "car";
     }

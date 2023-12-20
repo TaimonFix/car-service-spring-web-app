@@ -16,10 +16,9 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Employee)}"> </div>
     <h1>Список работников</h1>
-<!--    <span th:text="${employee.employeeID + ' ' + employee.fullName + ' ' + employee.birthDate-->
-<!--    + ' ' + employee.address + ' ' + employee.phone + ' ' + employee.post + ' ' + employee.salary-->
-<!--    + ' ' + employee.experience + ' ' + employee.bonusSalary +  ' ' + employee.operatingMode}"></span>-->
-    <h1>Список клиентов</h1>
+
+    Количество работников: <span th:text="${employees.size}"></span>
+    <br>
 
     <span th:if="${employees.size == 0}">Список работников пуст</span>
     <table th:if="${employees.size > 0}" class="table table-hover">
