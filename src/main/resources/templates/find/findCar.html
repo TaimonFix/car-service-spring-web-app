@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title style="background-color:#1c87c9; color:#fff;">findCar</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div th:replace="~{navigation :: navigation(Car)}"> </div>
+    <h1>Список автомобилей</h1>
+    Количество автомобилей: <span th:text="${cars.size}"></span>
+    <br>
+
+    <span th:if="${cars.size == 0}">Список автомобилей пуст</span>
+    <table th:if="${cars.size > 0}" class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>VIN номер</td>
+            <td>Номер автомобиля</td>
+            <td>Марка автомобиля</td>
+            <td>Дата выпуска</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.vin}"></td>
+            <td th:text="${car.carNumber}"></td>
+            <td th:text="${car.carBrand}"></td>
+            <td th:text="${car.releaseDate}"></td>
+            <td> <a class="btn btn-danger" th:href="@{'/car/delete/' + ${car.vin}}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
