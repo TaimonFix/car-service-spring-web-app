@@ -11,8 +11,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
-
-
 <body>
 
 <div class="container">
@@ -20,6 +18,13 @@
     <h1>Список автомобилей</h1>
     Количество автомобилей: <span th:text="${cars.size}"></span>
     <br>
+
+    <form th:action="@{'/car/filter'}">
+        <td> <input type="text" th:name="carNumber" class="form-control"></td>
+        <td> <input type="text" th:name="carBrand" class="form-control"></td>
+        <td> <input type="date" th:name="releaseDate" class="form-control"></td>
+        <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>
+    </form>
 
     <span th:if="${cars.size == 0}">Список автомобилей пуст</span>
     <table th:if="${cars.size > 0}" class="table table-hover">

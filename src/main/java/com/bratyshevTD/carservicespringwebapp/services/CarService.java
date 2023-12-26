@@ -5,6 +5,7 @@ import com.bratyshevTD.carservicespringwebapp.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class CarService {
     public List<Car> filterAllByReleaseDate(LocalDate releaseDate) {return  carRepository.findAllByReleaseDate(releaseDate); }
 
     public List<Car> filterAllByCarNumberAndCarBrandAndReleaseDate(String carNumber, String carBrand, LocalDate releaseDate) {
-        return carRepository.findAllByCarNumberAndCarBrandAndReleaseDate(carNumber, carBrand, releaseDate);
+        return carRepository.filterByCarNumberAndCarBrandAndReleaseDate(carNumber, carBrand, releaseDate);
     }
 
     public List<Car> getAllCars() { return carRepository.findAll(); }

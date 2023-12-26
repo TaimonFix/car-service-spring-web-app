@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class CarController {
                                                            @RequestParam(name="releaseDate", required=false) LocalDate releaseDate,
                                                            Model model) {
 
-        if (carNumber==null && carBrand==null && releaseDate==null) {
+        if (carNumber=="" && carBrand=="" && releaseDate==null) {
             return "redirect:/car";
         }
         model.addAttribute("carNumber", carNumber);

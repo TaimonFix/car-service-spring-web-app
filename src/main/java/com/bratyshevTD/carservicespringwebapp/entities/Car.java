@@ -1,6 +1,7 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
 import jakarta.persistence.*;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,7 +26,8 @@ public class Car {
     @Column(name = "car_brand")
     private String carBrand;
 
-    @Column(name = "release_date")
+    @Column(name = "release_date", columnDefinition = "DATE")
+    @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
     private LocalDate releaseDate;
 
     public Car() {
