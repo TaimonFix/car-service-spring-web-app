@@ -1,19 +1,44 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
-import java.math.BigInteger;
+import jakarta.persistence.*;
 
+import java.math.BigInteger;
+import java.time.LocalDate;
+import java.util.List;
+
+@Entity
+@Table(name="car-order")
 public class CarOrder {
 
+    @Id
+    @Column(name="order_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderID;
-    private int clientID;
-    private String vin;
-    private String orderDate;
-    private String correctionDate;
-    private String reason;
-    private int detailID;
-    private int employeeID;
 
-    public CarOrder(long orderID, int clientID, String vin, String orderDate, String correctionDate, String reason, int detailID, int employeeID) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
+    private Client clientID;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vin")
+    private Car vin;
+    @Column(name="order_date")
+    private LocalDate orderDate;
+
+    @Column(name="correction_date")
+    private LocalDate correctionDate;
+
+    @Column(name="reason")
+    private String reason;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "detail_id")
+    private CarDetail detailID;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
+    private List<Employee> employeeID;
+
+    public CarOrder(long orderID, Client clientID, Car vin, LocalDate orderDate, LocalDate correctionDate, String reason, CarDetail detailID, List<Employee> employeeID) {
         this.orderID = orderID;
         this.clientID = clientID;
         this.vin = vin;
@@ -32,35 +57,35 @@ public class CarOrder {
         this.orderID = orderID;
     }
 
-    public int getClientID() {
+    public Client getClientID() {
         return clientID;
     }
 
-    public void setClientID(int clientID) {
+    public void setClientID(Client clientID) {
         this.clientID = clientID;
     }
 
-    public String getVin() {
+    public Car getVin() {
         return vin;
     }
 
-    public void setVin(String vin) {
+    public void setVin(Car vin) {
         this.vin = vin;
     }
 
-    public String getOrderDate() {
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 
-    public String getCorrectionDate() {
+    public LocalDate getCorrectionDate() {
         return correctionDate;
     }
 
-    public void setCorrectionDate(String correctionDate) {
+    public void setCorrectionDate(LocalDate correctionDate) {
         this.correctionDate = correctionDate;
     }
 
@@ -72,19 +97,19 @@ public class CarOrder {
         this.reason = reason;
     }
 
-    public int getDetailID() {
+    public CarDetail getDetailID() {
         return detailID;
     }
 
-    public void setDetailID(int detailID) {
+    public void setDetailID(CarDetail detailID) {
         this.detailID = detailID;
     }
 
-    public int getEmployeeID() {
+    public List<Employee> getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(int employeeID) {
+    public void setEmployeeID(List<Employee> employeeID) {
         this.employeeID = employeeID;
     }
 

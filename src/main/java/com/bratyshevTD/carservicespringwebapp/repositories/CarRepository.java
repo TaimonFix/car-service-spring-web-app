@@ -20,7 +20,8 @@ public interface CarRepository extends JpaRepository<Car, String> {
     List<Car> findAllByReleaseDate(LocalDate releaseDate);
 
 
-    @Query("SELECT c FROM Car c WHERE (c.carNumber = :carNumber OR :carNumber is null) AND (c.carBrand = :carBrand OR :carBrand is null) AND (c.releaseDate = :releaseDate OR :releaseDate is null)")
-    List<Car> filterByCarNumberAndCarBrandAndReleaseDate(@Param("carNumber") String carNumber, @Param("carBrand") String carBrand, @Param("releaseDate") LocalDate releaseDate);
+    @Query("SELECT c FROM Car c WHERE (c.carNumber = :carNumber OR :carNumber is null) AND (c.carBrand = :carBrand OR :carBrand is null) AND (c.releaseDate = :releaseDate OR CAST(:releaseDate AS date) is null)")
+    List<Car> filter(@Param("carNumber") String carNumber, @Param("carBrand") String carBrand, @Param("releaseDate") LocalDate releaseDate);
 
+//    List<Car> findByCarNumberAndCarBrandAndReleaseDate(String carNumber, String carBrand, LocalDate releaseDate);
 }

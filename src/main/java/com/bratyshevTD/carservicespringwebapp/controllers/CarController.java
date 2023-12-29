@@ -3,6 +3,7 @@ package com.bratyshevTD.carservicespringwebapp.controllers;
 import com.bratyshevTD.carservicespringwebapp.entities.*;
 import com.bratyshevTD.carservicespringwebapp.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -48,7 +49,7 @@ public class CarController {
                                                            @RequestParam(name="releaseDate", required=false) LocalDate releaseDate,
                                                            Model model) {
 
-        if (carNumber=="" && carBrand=="" && releaseDate==null) {
+        if (carNumber==null && carBrand==null && releaseDate==null) {
             return "redirect:/car";
         }
         model.addAttribute("carNumber", carNumber);

@@ -45,10 +45,10 @@ public class MainController {
 
 
 
-    @GetMapping("/car-order")
-    public String carOrderPage(Model model) {
-        CarOrder carOrder = new CarOrder(1, 1, "xta", "22.11.2023", "23.11.2023", "-", 1, 1);
-        model.addAttribute("carOrder", carOrder);
-        return "car-order";
-    }
+//    @GetMapping("/car-order")
+//    public String carOrderPage(Model model) {
+//        CarOrder carOrder = new CarOrder(1, 1, "xta", "22.11.2023", "23.11.2023", "-", 1, 1);
+//        model.addAttribute("carOrder", carOrder);
+//        return "car-order";
+//    }
 }

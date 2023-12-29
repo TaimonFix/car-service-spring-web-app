@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="-Добавлены данные, страница, основные функции для car_detail&#10;-Добавлена навигация по страницам">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/car_service" beforeDir="false" afterPath="$PROJECT_DIR$/sql/car_service" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/CarDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/CarDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/CarOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/CarOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/entities/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/CarRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,9 +1,6 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,6 +13,7 @@ import java.util.Random;
 public class CarDetail {
 
     @Id
+    @OneToMany
     @Column(name = "detail_id")
     private String detailID;
 
