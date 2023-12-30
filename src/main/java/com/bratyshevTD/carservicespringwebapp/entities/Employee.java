@@ -15,7 +15,6 @@ import java.util.Random;
 public class Employee {
 
     @Id
-    @OneToOne
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
     private Long employeeID;

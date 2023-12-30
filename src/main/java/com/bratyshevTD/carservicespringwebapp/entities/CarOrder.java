@@ -1,13 +1,14 @@
 package com.bratyshevTD.carservicespringwebapp.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
-import java.util.List;
+
 
 @Entity
-@Table(name="car-order")
+@Table(name="car_order")
 public class CarOrder {
 
     @Id
@@ -17,11 +18,14 @@ public class CarOrder {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Client clientID;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vin")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Car vin;
+
     @Column(name="order_date")
     private LocalDate orderDate;
 
@@ -33,12 +37,18 @@ public class CarOrder {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "detail_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private CarDetail detailID;
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id")
-    private List<Employee> employeeID;
 
-    public CarOrder(long orderID, Client clientID, Car vin, LocalDate orderDate, LocalDate correctionDate, String reason, CarDetail detailID, List<Employee> employeeID) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Employee employeeID;
+
+    public CarOrder() {
+    }
+
+    public CarOrder(long orderID, Client clientID, Car vin, LocalDate orderDate, LocalDate correctionDate, String reason, CarDetail detailID, Employee employeeID) {
         this.orderID = orderID;
         this.clientID = clientID;
         this.vin = vin;
@@ -105,11 +115,11 @@ public class CarOrder {
         this.detailID = detailID;
     }
 
-    public List<Employee> getEmployeeID() {
+    public Employee getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(List<Employee> employeeID) {
+    public void setEmployeeID(Employee employeeID) {
         this.employeeID = employeeID;
     }
 

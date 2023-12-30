@@ -13,14 +13,11 @@ import java.util.Random;
 public class CarDetail {
 
     @Id
-    @OneToMany
     @Column(name = "detail_id")
     private String detailID;
 
     @Column(name = "title")
     private String title;
-
-
 
     public CarDetail() {
     }

@@ -20,6 +20,8 @@ public class EmployeeService {
 
     public List<Employee> getAllEmployees() { return employeeRepository.findAll(); }
 
+    public Employee getEmployeeById(Long id) { return employeeRepository.getReferenceById(id); }
+
     public void addEmployee(Employee employee) { employeeRepository.save(employee); }
 
     public void deleteEmployeeById(Long id) { employeeRepository.deleteById(id);}

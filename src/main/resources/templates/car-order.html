@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
 
-    <title>Car-order</title>
+    <meta charset="UTF-8">
+    <title style="background-color:#1c87c9; color:#fff;">Car-Order</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -16,8 +16,77 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Car-Order)}"> </div>
     <h1>Список заказов</h1>
-    <span th:text="${carOrder.orderID + ' ' + carOrder.clientID + ' ' + carOrder.vin + ' '
-     + ' ' + carOrder.orderDate + ' ' + carOrder.correctionDate + ' ' + carOrder.reason + ' ' + carOrder.detailID + ' ' + carOrder.employeeID}"></span>
+    Количество заказов: <span th:text="${carOrders.size}"></span>
+    <br>
+
+<!--    <form th:action="@{'/carOrder/filter'}">-->
+<!--        <td> <input type="text" th:name="carNumber" class="form-control"></td>-->
+<!--        <td> <input type="text" th:name="carBrand" class="form-control"></td>-->
+<!--        <td> <input type="date" th:name="releaseDate" class="form-control"></td>-->
+<!--        <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>-->
+<!--    </form>-->
+
+
+    <table class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>id заказа</td>
+            <td>id клиента</td>
+            <td>VIN номер</td>
+            <td>Дата обращения</td>
+            <td>Дата исправления</td>
+            <td>Причина обращения</td>
+            <td>id детали</td>
+            <td>id работника</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <form th:action="@{'/car-order/add'}" method="post">
+                <td> <input type="number" th:name="orderID" class="form-control"></td>
+                <td> <input type="number" th:name="clientID" class="form-control"></td>
+                <td> <input type="text" th:name="vin" class="form-control"></td>
+                <td> <input type="date" th:name="orderDate" class="form-control"></td>
+                <td> <input type="date" th:name="correctionDate" class="form-control"></td>
+                <td> <input type="text" th:name="reason" class="form-control"></td>
+                <td> <input type="text" th:name="detailID" class="form-control"></td>
+                <td> <input type="number" th:name="employeeID" class="form-control"></td>
+                <td> <button type="submit" class="btn btn-primary">Добавить</button></td>
+            </form>
+        </tr>
+        </tbody>
+    </table>
+    <span th:if="${carOrders.size == 0}">Список заказов пуст</span>
+    <table th:if="${carOrders.size > 0}" class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>id заказа</td>
+            <td>id клиента</td>
+            <td>VIN номер</td>
+            <td>Дата обращения</td>
+            <td>Дата исправления</td>
+            <td>Причина обращения</td>
+            <td>id детали</td>
+            <td>id работника</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="carOrder : ${carOrders}">
+            <td th:text="${carOrder.orderID}"></td>
+            <td th:if="${carOrder.clientID != null}" th:text="${carOrder.clientID}" th:else="Отсутствует"></td>
+            <td th:if="${carOrder.vin != null}" th:text="${carOrder.vin}" th:else="Отсутствует"></td>
+            <td th:text="${carOrder.orderDate}"></td>
+            <td th:text="${carOrder.correctionDate}"></td>
+            <td th:text="${carOrder.reason}"></td>
+            <td th:if="${carOrder.detailID} != null" th:text="${carOrder.detailID}" th:else="Отсутствует"></td>
+            <td th:if="${carOrder.employeeID} != null" th:text="${carOrder.employeeID}" th:else="Отсутствует"></td>
+            <td> <a class="btn btn-danger" th:href="@{'/car-order/delete/' + ${carOrder.orderID}}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+
 </div>
 
 </body>

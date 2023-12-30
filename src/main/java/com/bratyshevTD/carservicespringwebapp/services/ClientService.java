@@ -21,6 +21,8 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
+    public Client getClientById(Long id) { return clientRepository.getReferenceById(id);}
+
     public void addClient(Client client) { clientRepository.save(client); }
 
     public void deleteClientById(Long id) { clientRepository.deleteById(id); }

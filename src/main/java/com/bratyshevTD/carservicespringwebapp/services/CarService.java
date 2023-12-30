@@ -18,16 +18,11 @@ public class CarService {
     public void setCarRepository(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
+    public List<Car> find(String search) {
+        return carRepository.find(search);
+    }
 
-//    public boolean existsById(String id) { return carRepository.existsById(id); }
-//
-//    public boolean existsByTitle(String title) { return carRepository.existsByTitle(title); }
-//
-    public List<Car> filterAllByCarNumber(String carNumber) {return  carRepository.findAllByCarNumber(carNumber); }
-    public List<Car> filterAllByCarBrand(String carBrand) {return  carRepository.findAllByCarBrand(carBrand); }
-    public List<Car> filterAllByReleaseDate(LocalDate releaseDate) {return  carRepository.findAllByReleaseDate(releaseDate); }
-
-    public List<Car> filterAllByCarNumberAndCarBrandAndReleaseDate(String carNumber, String carBrand, LocalDate releaseDate) {
+    public List<Car> filter(String carNumber, String carBrand, LocalDate releaseDate) {
         return carRepository.filter(carNumber, carBrand, releaseDate);
     }
 

@@ -10,16 +10,8 @@ import java.util.Date;
 import java.util.List;
 
 public interface CarRepository extends JpaRepository<Car, String> {
-
-    boolean existsByCarNumber(String carNumber);
-    boolean existsByCarBrand(String carBrand);
-    boolean existsByReleaseDate(LocalDate releaseDate);
-
-    List<Car> findAllByCarNumber(String carNumber);
-    List<Car> findAllByCarBrand(String carBrand);
-    List<Car> findAllByReleaseDate(LocalDate releaseDate);
-
-
+    @Query("SELECT c FROM Car c WHERE (c.vin LIKE %:search%) OR (c.carNumber LIKE %:search%) OR (c.carBrand LIKE %:search%) OR (CAST(c.releaseDate as string) LIKE %:search%)")
+    List<Car> find(@Param("search") String search);
     @Query("SELECT c FROM Car c WHERE (c.carNumber = :carNumber OR :carNumber is null) AND (c.carBrand = :carBrand OR :carBrand is null) AND (c.releaseDate = :releaseDate OR CAST(:releaseDate AS date) is null)")
     List<Car> filter(@Param("carNumber") String carNumber, @Param("carBrand") String carBrand, @Param("releaseDate") LocalDate releaseDate);
 

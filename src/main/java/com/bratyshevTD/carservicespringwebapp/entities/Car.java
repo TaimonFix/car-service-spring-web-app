@@ -17,7 +17,6 @@ public class Car {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @OneToMany
     @Column(name = "vin")
     private String vin;
 

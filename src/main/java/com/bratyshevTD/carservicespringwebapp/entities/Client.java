@@ -14,11 +14,9 @@ import java.util.Random;
 public class Client {
 
     @Id
-    @OneToMany
     @Column(name="client_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long clientID;
-
 
     @Column(name="full_name")
     private String fullName;

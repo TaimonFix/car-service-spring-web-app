@@ -25,7 +25,6 @@ public class CarController {
     @GetMapping("/car")
     public String carsPage(Model model) {
         List<Car> allCars = carService.getAllCars();
-        int size = allCars.size();
         model.addAttribute("cars", allCars);
         return "car";
     }
@@ -43,8 +42,20 @@ public class CarController {
         return "redirect:/car";
     }
 
+
+    @GetMapping("/car/find")
+    public String find(@RequestParam(name="search") String search, Model model) {
+        if (search == null) {
+            return "redirect:/car";
+        }
+        model.addAttribute("search", search);
+        List<Car> findCars = carService.find(search);
+        model.addAttribute("cars", findCars);
+        model.addAttribute(findCars);
+        return "find/findCar";
+    }
     @GetMapping("/car/filter")
-    public String filterByCarNumberAndCarBrandAndReleaseDate(@RequestParam(name="carNumber", required=false) String carNumber,
+    public String filter(@RequestParam(name="carNumber", required=false) String carNumber,
                                                            @RequestParam(name="carBrand", required=false) String carBrand,
                                                            @RequestParam(name="releaseDate", required=false) LocalDate releaseDate,
                                                            Model model) {
@@ -55,9 +66,9 @@ public class CarController {
         model.addAttribute("carNumber", carNumber);
         model.addAttribute("carBrand", carBrand);
         model.addAttribute("releaseDate", releaseDate);
-        List<Car> filterCars = carService.filterAllByCarNumberAndCarBrandAndReleaseDate(carNumber, carBrand, releaseDate);
+        List<Car> filterCars = carService.filter(carNumber, carBrand, releaseDate);
         model.addAttribute("cars", filterCars);
-        return "find/findCar";
+        return "filter/filterCar";
     }
 
 
