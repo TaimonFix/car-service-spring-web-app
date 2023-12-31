@@ -27,4 +27,7 @@ public class CarDetailService {
     public void addCarDetail(CarDetail carDetail) { carDetailRepository.save(carDetail); }
 
     public void removeById(String id) { carDetailRepository.deleteById(id); }
+
+    public List<CarDetail> find(String search) { return carDetailRepository.find(search); }
+    public List<CarDetail> filter(String detailID, String title) { return carDetailRepository.filter(detailID, title); }
 }

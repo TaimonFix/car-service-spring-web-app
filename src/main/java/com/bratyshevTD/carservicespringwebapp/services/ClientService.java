@@ -26,4 +26,8 @@ public class ClientService {
     public void addClient(Client client) { clientRepository.save(client); }
 
     public void deleteClientById(Long id) { clientRepository.deleteById(id); }
+
+    public List<Client> find(String search) {return clientRepository.find(search); }
+
+    public List<Client> filter(Long clientID, String fullName, String phone ) { return clientRepository.filter(clientID, fullName, phone); }
 }

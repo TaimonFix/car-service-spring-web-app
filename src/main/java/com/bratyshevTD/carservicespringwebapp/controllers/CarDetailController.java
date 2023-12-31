@@ -41,6 +41,29 @@ private CarDetailService carDetailService;
         return "redirect:/car-detail";
     }
 
+    @GetMapping("/car-detail/find")
+    public String find(@RequestParam(required = false) String search, Model model) {
+        if (search == "") {
+            return "redirect:/car-detail";
+        }
+        model.addAttribute("search", search);
+        List<CarDetail> carDetails = carDetailService.find(search);
+        model.addAttribute("carDetails", carDetails);
+        return "find/findCarDetail";
+    }
+
+    @GetMapping("/car-detail/filter")
+    public String filter(@RequestParam(name="detailID", required = false) String detailID, @RequestParam(name="title", required = false) String title, Model model) {
+        if (detailID == null && title == null) {
+            return "redirect:/car-detail";
+        }
+        model.addAttribute("detailID", detailID);
+        model.addAttribute("title", title);
+        List<CarDetail> carDetails = carDetailService.filter(detailID, title);
+        model.addAttribute("carDetails", carDetails);
+        return "filter/filterCarDetail";
+    }
+
 //    @GetMapping("/car-detail/adds")
 //    public String addRandomCarDetails() throws Exception {
 //

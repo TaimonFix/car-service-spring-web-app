@@ -56,6 +56,7 @@
             </form>
         </tr>
         </tbody>
+
     </table>
     <span th:if="${carOrders.size == 0}">Список заказов пуст</span>
     <table th:if="${carOrders.size > 0}" class="table table-hover">
@@ -75,13 +76,13 @@
         <tbody>
         <tr th:each="carOrder : ${carOrders}">
             <td th:text="${carOrder.orderID}"></td>
-            <td th:if="${carOrder.clientID != null}" th:text="${carOrder.clientID}" th:else="Отсутствует"></td>
-            <td th:if="${carOrder.vin != null}" th:text="${carOrder.vin}" th:else="Отсутствует"></td>
+            <td th:text="${carOrder.clientID != null} ? ${carOrder.clientID.getClientID} : 'Отсутствует'"></td>
+            <td th:text="${carOrder.vin != null} ? ${carOrder.vin.getVin} : 'Отсутствует'"></td>
             <td th:text="${carOrder.orderDate}"></td>
             <td th:text="${carOrder.correctionDate}"></td>
             <td th:text="${carOrder.reason}"></td>
-            <td th:if="${carOrder.detailID} != null" th:text="${carOrder.detailID}" th:else="Отсутствует"></td>
-            <td th:if="${carOrder.employeeID} != null" th:text="${carOrder.employeeID}" th:else="Отсутствует"></td>
+            <td th:text="${carOrder.detailID} != null? ${carOrder.detailID.getDetailID} : 'Отсутствует'"></td>
+            <td th:text="${carOrder.employeeID} != null? ${carOrder.employeeID.getEmployeeID} : 'Отсутствует'"></td>
             <td> <a class="btn btn-danger" th:href="@{'/car-order/delete/' + ${carOrder.orderID}}">Удалить</a></td>
         </tr>
         </tbody>

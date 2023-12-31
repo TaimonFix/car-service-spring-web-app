@@ -16,6 +16,43 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Client)}"> </div>
     <h1>Список клиентов</h1>
+    <form th:action="@{'/client/find'}">
+        <table align="right">
+            <thead class="bg-light">
+            <tr>
+                <td>Поиск по слову</td>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="search" class="form-control">
+                <td> <button type="submit" class="btn btn-primary">Поиск</button></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+    <br>
+    <form th:action="@{'/client/filter'}" >
+        <table>
+            <thead class="bg-light">
+            <tr>
+                <td>Номер клиента</td>
+                <td>ФИО</td>
+                <td>Номер телефона</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="clientID" class="form-control">
+                <td> <input type="text" th:name="fullName" class="form-control"></td>
+                <td> <input type="text" th:name="phone" class="form-control"></td>
+                <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
     Количество клиентов: <span th:text="${clients.size}"></span>
     <br>
     <span th:if="${clients.size == 0}">Список клиентов пуст</span>

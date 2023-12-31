@@ -16,7 +16,27 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Home)}"> </div>
     <h1>Главная страница</h1>
-    <h2>Главная страница</h2>
+    <h2 align="center">Статистика:</h2>
+</div>
+
+<!--<div id="my-pie-chart">-->
+<!--    <style align="right">-->
+<!--        #my-pie-chart {-->
+<!--        height: 500px;-->
+<!--        width: 500px;-->
+<!--        border-radius: 50%;-->
+<!--        background: conic-gradient(brown 1%, black 10%, blue 20%, green 40%, yellow 70%);-->
+<!--    </style>-->
+<!--    -->
+<!--</div>-->
+
+<div>
+
+    <p align="center">Количество полей в таблице "Car": <span th:text="${carSize}"></span> <br></p>
+    <p align="center">Количество полей в таблице "Car-Detail": <span th:text="${carDetailSize}"></span> <br></p>
+    <p align="center">Количество полей в таблице "Car-Order": <span th:text="${carOrderSize}"></span> <br></p>
+    <p align="center">Количество полей в таблице "Client": <span th:text="${clientSize}"></span> <br></p>
+    <p align="center">Количество полей в таблице "Employee": <span th:text="${employeeSize}"></span> <br></p>
 </div>
 
 </body>

@@ -16,7 +16,57 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Employee)}"> </div>
     <h1>Список работников</h1>
+    <form th:action="@{'/employee/find'}">
+        <table align="right">
+            <thead class="bg-light">
+            <tr>
+                <td>Поиск по слову</td>
 
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="search" class="form-control">
+                <td> <button type="submit" class="btn btn-primary">Поиск</button></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+    <br>
+    <form th:action="@{'/employee/filter'}" >
+        <table>
+            <thead class="bg-light">
+            <tr>
+                <td>Номер работника</td>
+                <td>ФИО</td>
+                <td>Дата рождения</td>
+                <td>Адрес</td>
+                <td>Телефон</td>
+                <td>Должность</td>
+                <td>Оклад</td>
+                <td>Стаж</td>
+                <td>Надбавка за оклад</td>
+                <td>Режим работы</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="employeeID" class="form-control"></td>
+                <td> <input type="text" th:name="fullName" class="form-control"></td>
+                <td> <input type="date" th:name="birthDate" class="form-control"></td>
+                <td> <input type="text" th:name="address" class="form-control"></td>
+                <td> <input type="text" th:name="phone" class="form-control"></td>
+                <td> <input type="text" th:name="post" class="form-control"></td>
+                <td> <input type="text" th:name="salary" class="form-control"></td>
+                <td> <input type="text" th:name="experience" class="form-control"></td>
+                <td> <input type="text" th:name="bonusSalary" class="form-control"></td>
+                <td> <input type="text" th:name="operatingMode" class="form-control"></td>
+                <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
     Количество работников: <span th:text="${employees.size}"></span>
     <br>
 

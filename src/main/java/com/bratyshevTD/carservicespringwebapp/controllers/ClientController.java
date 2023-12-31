@@ -40,6 +40,29 @@ public class ClientController {
         return "redirect:/client";
     }
 
+    @GetMapping("/client/find")
+    public String find(@RequestParam(required = false) String search, Model model) {
+        if (search == "") {
+            return "redirect:/client";
+        }
+        List<Client> clients = clientService.find(search);
+        model.addAttribute("clients", clients);
+        return "find/findClient";
+    }
+
+    @GetMapping("/client/filter")
+    public String find(@RequestParam(name="clientID",required = false) Long clientID, @RequestParam(name="fullName", required = false) String fullName,
+                       @RequestParam(name="phone", required = false) String phone, Model model) {
+        if (clientID == null && fullName == null && phone == null) {
+            return "redirect:/client";
+        }
+        model.addAttribute("clientID", clientID);
+        model.addAttribute("fullName", fullName);
+        model.addAttribute("phone", phone);
+        List<Client> clients = clientService.filter(clientID, fullName, phone);
+        model.addAttribute("clients", clients);
+        return "filter/filterClient";
+    }
     @GetMapping("/client/adds")
     public String addRandomClients() throws Exception {
         for (int i = 0; i < 1000; i++) {

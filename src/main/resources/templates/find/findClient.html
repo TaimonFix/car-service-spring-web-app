@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title style="background-color:#1c87c9; color:#fff;">findClient</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div th:replace="~{navigation :: navigation(Client)}"> </div>
+    <h1>Список клиентов по поиску:</h1>
+    <span th:if="${search!=null}">Поиск=<span th:text="${search}"></span> <br></span>
+    Количество клиентов: <span th:text="${clients.size}"></span>
+    <br>
+
+    <span th:if="${clients.size == 0}">Список клиентов пуст</span>
+    <table th:if="${clients.size > 0}" class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>Номер клиента</td>
+            <td>Номер автомобиля</td>
+            <td>Номер телефона</td>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="client : ${clients}">
+            <td th:text="${client.clientID}"></td>
+            <td th:text="${client.fullName}"></td>
+            <td th:text="${client.phone}"></td>
+
+            <td> <a class="btn btn-danger" th:href="@{'/client/delete/' + ${client.clientID}}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

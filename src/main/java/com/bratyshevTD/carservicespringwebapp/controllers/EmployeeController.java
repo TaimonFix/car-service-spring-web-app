@@ -48,6 +48,40 @@ public class EmployeeController {
         return "redirect:/employee";
     }
 
+    @GetMapping("/employee/find")
+    public String find(@RequestParam(name="search", required = false) String search, Model model) {
+        if (search == "") {
+            return "redirect:/employee";
+        }
+        List<Employee> employees = employeeService.find(search);
+        model.addAttribute("employees", employees);
+        return "find/findEmployee";
+    }
+
+    @GetMapping("/employee/filter")
+    public String filter(@RequestParam(name="employeeID", required = false) Long employeeID, @RequestParam(name="fullName", required = false) String fullName,
+                         @RequestParam(name="birthDate", required = false) LocalDate birthDate, @RequestParam(name="address", required = false) String address,
+                         @RequestParam(required = false) String phone, @RequestParam(name="post", required = false) String post,
+                         @RequestParam(name="salary", required = false) String salary, @RequestParam(name="experience", required = false) String experience,
+                         @RequestParam(name="bonusSalary", required = false) String bonusSalary, @RequestParam(name="operatingMode", required = false) String operatingMode, Model model) {
+        if (employeeID == null && fullName == null && birthDate == null && address == null && phone == null
+        && post == null && salary == null && experience == null && bonusSalary == null && operatingMode == null) {
+            return "redirect:/employee";
+        }
+        model.addAttribute("employeeID", employeeID);
+        model.addAttribute("fullName", fullName);
+        model.addAttribute("birthDate", birthDate);
+        model.addAttribute("address", address);
+        model.addAttribute("phone", phone);
+        model.addAttribute("post", post);
+        model.addAttribute("salary", salary);
+        model.addAttribute("experience", experience);
+        model.addAttribute("bonusSalary", bonusSalary);
+        model.addAttribute("operatingMode", operatingMode);
+        List<Employee> employees = employeeService.filter(employeeID, fullName, birthDate, address, phone, post, salary, experience, bonusSalary, operatingMode);
+        model.addAttribute("employees", employees);
+        return "filter/filterEmployee";
+    }
     @GetMapping("/employee/adds")
     public String addRandomEmployees() throws Exception {
         for (int i = 0; i < 760; i++) {

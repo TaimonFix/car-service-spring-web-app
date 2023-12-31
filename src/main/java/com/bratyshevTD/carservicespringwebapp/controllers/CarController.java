@@ -45,7 +45,7 @@ public class CarController {
 
     @GetMapping("/car/find")
     public String find(@RequestParam(name="search") String search, Model model) {
-        if (search == null) {
+        if (search == "") {
             return "redirect:/car";
         }
         model.addAttribute("search", search);

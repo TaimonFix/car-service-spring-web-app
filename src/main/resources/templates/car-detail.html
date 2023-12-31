@@ -16,6 +16,40 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Car-detail)}"> </div>
     <h1>Список деталей для автомобилей</h1>
+    <form th:action="@{'/car-detail/find'}">
+        <table align="right">
+            <thead class="bg-light">
+            <tr>
+                <td>Поиск по слову</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="search" class="form-control">
+                <td> <button type="submit" class="btn btn-primary">Поиск</button></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+    <br>
+    <form th:action="@{'/car-detail/filter'}" >
+        <table>
+            <thead class="bg-light">
+            <tr>
+                <td>Номер детали</td>
+                <td>Название</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="detailID" class="form-control">
+                <td> <input type="text" th:name="title" class="form-control"></td>
+                <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
     Количество деталей для автомобилей: <span th:text="${carDetails.size}"></span>
     <br>
     <span th:if="${carDetails.size == 0}">Список деталей для автомобилей пуст</span>

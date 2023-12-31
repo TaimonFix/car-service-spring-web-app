@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title style="background-color:#1c87c9; color:#fff;">filterEmployee</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div th:replace="~{navigation :: navigation(Employee)}"> </div>
+    <h1>Список работников по фильтру:</h1>
+    <span th:if="${employeeID!=null}">Номер работника=<span th:text="${employeeID}"></span> <br></span>
+    <span th:if="${fullName!=null}">ФИО=<span th:text="${fullName}"></span> <br></span>
+    <span th:if="${birthDate!=null}">Дата рождения=<span th:text="${birthDate}"></span> <br></span>
+    <span th:if="${address!=null}">Адрес=<span th:text="${address}"></span> <br></span>
+    <span th:if="${phone!=null}">Телефон=<span th:text="${phone}"></span> <br></span>
+    <span th:if="${post!=null}">Должность=<span th:text="${post}"></span> <br></span>
+    <span th:if="${salary!=null}">Оклад=<span th:text="${salary}"></span> <br></span>
+    <span th:if="${experience!=null}">Стаж=<span th:text="${experience}"></span> <br></span>
+    <span th:if="${bonusSalary!=null}">Надбавка за оклад=<span th:text="${bonusSalary}"></span> <br></span>
+    <span th:if="${operatingMode!=null}">Режим работы=<span th:text="${operatingMode}"></span> <br></span>
+    Количество работников: <span th:text="${employees.size}"></span>
+    <br>
+
+    <span th:if="${employees.size == 0}">Список работников пуст</span>
+    <table th:if="${employees.size > 0}" class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>Номер работника</td>
+            <td>ФИО</td>
+            <td>Дата рождения</td>
+            <td>Адрес</td>
+            <td>Телефон</td>
+            <td>Должность</td>
+            <td>Оклад</td>
+            <td>Стаж</td>
+            <td>Надбавка за оклад</td>
+            <td>Режим работы</td>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.employeeID}"></td>
+            <td th:text="${employee.fullName}"></td>
+            <td th:text="${employee.birthDate}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.phone}"></td>
+            <td th:text="${employee.post}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.experience}"></td>
+            <td th:text="${employee.bonusSalary}"></td>
+            <td th:text="${employee.operatingMode}"></td>
+
+            <td> <a class="btn btn-danger" th:href="@{'/employee/delete/' + ${employee.employeeID}}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -16,15 +16,47 @@
 <div class="container">
     <div th:replace="~{navigation :: navigation(Car)}"> </div>
     <h1>Список автомобилей</h1>
-    Количество автомобилей: <span th:text="${cars.size}"></span>
-    <br>
 
-    <form th:action="@{'/car/filter'}">
-        <td> <input type="text" th:name="carNumber" class="form-control"></td>
-        <td> <input type="text" th:name="carBrand" class="form-control"></td>
-        <td> <input type="date" th:name="releaseDate" class="form-control"></td>
-        <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>
+    <form th:action="@{'/car/find'}">
+        <table align="right">
+            <thead class="bg-light">
+            <tr>
+                <td>Поиск по слову</td>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="search" class="form-control">
+                <td> <button type="submit" class="btn btn-primary">Поиск</button></td>
+            </tr>
+            </tbody>
+        </table>
+
     </form>
+    <br>
+    <form th:action="@{'/car/filter'}" >
+        <table>
+            <thead class="bg-light">
+            <tr>
+                <td>Номер автомобиля</td>
+                <td>Марка автомобиля</td>
+                <td>Дата выпуска</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <input type="text" th:name="carNumber" class="form-control">
+                </td>
+                <td> <input type="text" th:name="carBrand" class="form-control"></td>
+                <td> <input type="date" th:name="releaseDate" class="form-control"></td>
+                <td> <button type="submit" class="btn btn-primary">Фильтр</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <p>Количество автомобилей: <span th:text="${cars.size}"></span></p>
+    <br>
 
     <span th:if="${cars.size == 0}">Список автомобилей пуст</span>
     <table th:if="${cars.size > 0}" class="table table-hover">
