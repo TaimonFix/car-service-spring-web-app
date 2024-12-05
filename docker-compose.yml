@@ -1,0 +1,26 @@
+version: "3.10"
+services:
+  db:
+    image: postgres:16
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=local
+      - POSTGRES_DB=car_service
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "5434:5434"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=car_service
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=local
