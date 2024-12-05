@@ -6,3 +6,5 @@
 3. Запустите терминал в корне приложения
 4. В терминале введите следующую команду: `docker-compose up -d --build`
 5. Запустите [CarServiceSpringWebAppApplication.java](src/main/java/com/bratyshevTD/carservicespringwebapp/CarServiceSpringWebAppApplication.java).
+
+Приложение доступно по следующему URL: [http://localhost:5434/app](http://localhost:5434/app)
