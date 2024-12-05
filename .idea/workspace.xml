@@ -4,32 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="Работа над реализацией таблицы &quot;Car-Order&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/filter/filterCarDetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/filter/filterClient.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/filter/filterEmployee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/find/findCarDetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/find/findClient.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/find/findEmployee.html" afterDir="false" />
+    <list default="true" id="495d906c-1b92-4d1c-a606-36f481fd17c3" name="Changes" comment="-Работа над добавлением фильтрации для таблицы &quot;Car&quot;">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/CarDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/CarDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/CarDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/repositories/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bratyshevTD/carservicespringwebapp/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car-order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/car_service" beforeDir="false" afterPath="$PROJECT_DIR$/init/car_service.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +23,37 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TaimonFix"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TaimonFix/car-service-spring-web-app.git",
+    "accountId": "0ef861f7-e9cb-4a8f-94b1-492cd7c7ee32"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -67,25 +66,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/braty/IdeaProjects/tinkoff_test&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "add-docker",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/braty/IdeaProjects/car-service-spring-web-app",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\braty\IdeaProjects\car-service-spring-web-app" />
+      <recent name="C:\Users\braty\IdeaProjects\car-service-spring-web-app\docker\init" />
+      <recent name="C:\Users\braty\IdeaProjects\car-service-spring-web-app\docker\postgres" />
+      <recent name="C:\Users\braty\IdeaProjects\car-service-spring-web-app\src\main\resources\bd" />
       <recent name="C:\Users\braty\IdeaProjects\car-service-spring-web-app\src\main\resources\templates\find" />
-      <recent name="C:\Users\braty\IdeaProjects\car-service-spring-web-app\src\main\resources\templates" />
-      <recent name="C:\Users\braty\OneDrive\Рабочий стол\car-service-spring-web-app\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -133,13 +134,6 @@
         <item itemvalue="Application.TestData" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-249ae16d76d6-36550cda" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -206,15 +200,7 @@
       <option name="project" value="LOCAL" />
       <updated>1703632657308</updated>
     </task>
-    <task id="LOCAL-00008" summary="Работа над реализацией таблицы &quot;Car-Order&quot;">
-      <option name="closed" value="true" />
-      <created>1703916642225</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1703916642225</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,8 +220,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/controllers/MainController.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarDetailService.java&#10;#&#9;src/main/java/com/bratyshevTD/carservicespringwebapp/services/CarService.java&#10;#&#9;src/main/resources/templates/car.html" />
     <MESSAGE value="-Добавлены данные, страница, основные функции для car_detail&#10;-Добавлена навигация по страницам" />
     <MESSAGE value="-Работа над добавлением фильтрации для таблицы &quot;Car&quot;" />
-    <MESSAGE value="Работа над реализацией таблицы &quot;Car-Order&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работа над реализацией таблицы &quot;Car-Order&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Работа над добавлением фильтрации для таблицы &quot;Car&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
